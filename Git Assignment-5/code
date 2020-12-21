@@ -1,0 +1,101 @@
+  475   cd Desktop
+
+  476  mkdir CC-005
+
+  477  cd CC-005
+
+  478  git clone https://github.com/TylerCounter/project-xv.git
+
+  479  ls
+
+  480  cd project-xv/
+
+  481  ls
+
+  482  cd participants/
+
+  483  ls
+
+  484  touch C7165-Baki.txt
+
+  485  status
+
+  486  git status
+
+  487  git add .
+
+  488  git status
+
+  489  git commit -m "Added information about C7165-Baki"
+
+  490  git push
+
+  491  ls
+
+  492  cd
+
+  493  cd User
+
+  494  cd c/Users/bakik/Desktop/git-lesson/python-project
+
+  495  cd Desktop/
+
+  496  cd /git-lesson/python-project/
+
+  497  cd git-lesson
+
+  498  cd python-project
+
+  499  ls
+
+  500  cat README.md
+
+  501  cd
+
+  502  cd Desktop
+
+  503  cd CC-005
+
+  504  cd project-xv
+
+  505  cd participants
+
+  506  ls
+
+  507  cat participants.md
+
+  508  touch C7165.txt
+
+  509  git status
+
+  510  git add .
+
+  511  git commit -m "Second one for complete"
+
+  512  git push
+
+  513  git pull
+
+  514  git pull
+
+  515  ls
+
+  516  git log
+
+  517  vim  participants.md
+
+  518  cat participants.md
+
+  519  git push
+
+  520  git status
+
+  521  git add participants.md
+
+  522  git status
+
+  523  git commit -m "last"
+
+  524  git push
+
+  525  history
