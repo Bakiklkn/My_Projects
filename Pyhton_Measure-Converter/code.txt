@@ -1,0 +1,17 @@
+Task-1:
+
+Write a short Python program that asks the user to enter Celsius temperature (it can be a decimal number), converts the entered temperature into Fahrenheit degree and prints the result.
+
+Task-2:
+Write a short Python program that asks the user to enter a distance (it can be a decimal number) in kilometers, converts the entered distance into miles and prints the result.
+
+Task-1
+Fahrenheit = float(input("What is the temperature:"))*1.8000+32
+result = f"{Fahrenheit} ℉"
+print(result)
+
+Task-2
+miles = float(input("Enter distance:"))* 0.621371192
+result = f"{miles} miles"
+print(result)
+
