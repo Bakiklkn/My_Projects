@@ -1,0 +1,10 @@
+year = int(input("Enter 4 digit year:"))
+new1 = (year % 4 ==0)
+new2 = (year % 100 ==0)
+new3 = (year % 400 ==0)
+
+
+leap_year = new1 and new2 and new3
+
+print(leap_year)
+
