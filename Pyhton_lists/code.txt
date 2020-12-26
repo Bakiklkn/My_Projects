@@ -1,0 +1,22 @@
+Group Anagrams
+Given a list of strings, group anagrams together.
+Example:
+Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
+Output:
+[
+  ["ate","eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]
+
+code:
+
+a = ["eat", "tea", "tan", "ate", "nat", "bat"]
+b = sorted(a)
+c = b[:4:2]
+d = c.append("tea")
+e = b[3:5]
+f = b[1:2]
+print(c)
+print(e)
+print(f)
