@@ -1,0 +1,22 @@
+number = input('Enter number:')
+words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','y','z'}
+string_check = set(number).difference(words)
+if bool(string_check) == False:
+  print("You entered string. Don't use non-numeric, float, or negative values!")
+elif isinstance(eval(number),float)  == True:
+  print("You entered float. Don't use non-numeric, float, or negative values!") 
+elif int(number) >= 0:
+  b = len(str(number))
+  amstrong = 0
+  z = list(number)
+  for i in range(b):
+    y = int(z[i]) ** b
+    i += 1
+    amstrong += y
+  if int(number) == amstrong:
+    print(number, "is an amstrong number")
+  else:
+    print(number, "is not an amstrong number") 
+    
+else:
+  print("You entered negative number.Don't use non-numeric, float, or negative values!")
