@@ -1,0 +1,11 @@
+number = int(input("Enter number:"))
+result = []
+for i in range(2,number):
+  isPrime = True
+  for j in range(2,i):
+    if i % j == 0:
+      isPrime = False
+  if isPrime:
+    result.append(i)
+print(result)
+
