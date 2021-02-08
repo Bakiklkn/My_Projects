@@ -1,0 +1,54 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 1. Write a query that displays InvoiceId, CustomerId and total dollar amount for each invoice, sorted first by CustomerId (in ascending order), and then by total dollar amount (in descending order).\
+\
+SELECT InvoiceId,CustomerId,total AS TotalDollarAmount FROM invoices ORDER BY CustomerId ASC, total DESC;\
+\
+2. Write a query that displays InvoiceId, CustomerId and total dollar amount for each invoice, but this time sorted first by total dollar amount (in descending order), and then by CustomerId (in ascending order).\
+\
+SELECT InvoiceId,CustomerId,total AS TotalDollarAmount FROM invoices ORDER BY total DESC,CustomerId ASC;\
+\
+3. Compare the results of these two queries above. How are the results different when you switch the column you sort on first? (Explain it in your own words.)\
+\
+It is more difficult to analyze the total amount and CustomerId manually in changing to second type of query. There are so many groups of having same amount and it does not make any sense to sort the CustomerId, because the number of CustomerId in each same amount is two or three. This makes our working more diffucult on an analysing of a collection of data. \
+\
+4. Write a query to pull the first 10 rows and all columns from the invoices table that have a dollar amount of total greater than or equal to 10.\
+\
+SELECT *  FROM invoices WHERE total>=10 LIMIT 10;\
+\
+5. Write a query to pull the first 5 rows and all columns from the invoices table that have a dollar amount of total less than 10.\
+\
+SELECT *  FROM invoices WHERE total<10 LIMIT 5;\
+\
+6. Find all track names that start with 'B' and end with 's'.\
+\
+SELECT name  FROM tracks WHERE name LIKE "B%s";\
+\
+7. Use the invoices table to find all information regarding invoices whose billing address is USA or Germany or Norway or Canada and invoice date is at any point in 2010, sorted from newest to oldest.\
+\
+SELECT * FROM invoices WHERE BillingCountry IN ("USA","Germany","Norway","Canada") AND InvoiceDate BETWEEN '2010-01-01' AND '2011-01-01' ORDER BY InvoiceDate DESC;\
+\
+8. How many tracks does each album have? Your solution should include Album id and its number of tracks sorted from highest to lowest.\
+\
+SELECT AlbumId, count(AlbumId) as NumberOfTracks FROM tracks GROUP BY AlbumId  ORDER BY NumberOfTracks DESC;\
+\
+9. Find the album title of the tracks. Your solution should include track name and its album title.\
+\
+SELECT tr.name as TrackName,al.Title as AlbumTitle FROM tracks tr INNER JOIN albums al on tr.AlbumId=al.AlbumId;\
+\
+10. Find the minimum duration of the track in an album. Your solution should include track name, album id, album title and duration of the track sorted from highest to lowest.\
+\
+SELECT tr.name as TrackName, tr.AlbumId, al.Title as AlbumTitle, min(Milliseconds) AS Duration FROM tracks tr JOIN albums al ON tr.AlbumId = al.AlbumId GROUP BY tr.AlbumId ORDER BY Duration DESC;\
+\
+11. Find the total duration of each album. Your solution should include track name, album id, album title and its total duration sorted from highest to lowest.\
+\
+SELECT tr.name as TrackName, tr.AlbumId, al.Title as AlbumTitle, sum(Milliseconds) AS Duration FROM tracks tr JOIN albums al ON tr.AlbumId = al.AlbumId GROUP BY tr.AlbumId ORDER BY Duration DESC;\
+\
+12. Based on the previous question, find the albums whose total duration is higher than 70 minutes. Your solution should include album title and total duration.\
+\
+SELECT AlbumTitle,Duration FROM (SELECT tr.name as TrackName, tr.AlbumId, al.Title as AlbumTitle, sum(Milliseconds) AS Duration FROM tracks tr JOIN albums al ON tr.AlbumId = al.AlbumId GROUP BY tr.AlbumId ORDER BY Duration DESC) WHERE Duration >4200000;}
